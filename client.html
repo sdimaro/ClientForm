@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1 style="text-align: center;">Prova Form di validazione lato Client</h1>
+    <form name="registrazione" id="registrazione" method="post" action="/send">
+
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" value=""><br>    <!-- minlength="3" maxlength="15" -->
+
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pwd" ><br>                <!-- size="10" maxlength="10" minlength="8" -->
+
+        <label for="email">Mail:</label><br>
+        <input type="email" id="email" name="email" placeholder="inserisci mail"><br><br> 
+
+
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday" min="1900-01-01" max="2024-12-31"> <br><br>
+
+        <input type="submit" name="Submit" value="Invia">
+
+    </form>
+
+    <script>
+
+        document.getElementById("registrazione").addEventListener("submit", function(event){
+            let username = document.forms.registrazione.username;
+            let passw = document.forms.registrazione.pwd;
+            let email = document.forms.registrazione.email;
+            let birthday = document.forms.registrazione.birthday;
+
+            if(username.value == "" || username.value.length < 3 || username.value.length > 15){
+                username.style.border = "2px solid red";
+                event.preventDefault();
+            } else {
+                username.style.border = ""; 
+            }
+
+            if(passw.value == "" || passw.value.length < 8 || passw.value.length > 10){
+                passw.style.border = "2px solid red";
+                event.preventDefault();
+            } else {
+                passw.style.border = ""; 
+            }
+
+            if(email.value == "" || (!email.value.includes("@gmail.com") && !email.value.includes("@itis.pr.it"))){
+                email.style.border = "2px solid red";
+                event.preventDefault();
+            } else {
+                email.style.border = "";
+            }
+
+
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
