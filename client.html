@@ -30,13 +30,14 @@
             let email = document.forms.registrazione.email;
             let birthday = document.forms.registrazione.birthday;
 
+            // validazione
             if(username.value == "" || username.value.length < 3 || username.value.length > 15){
                 username.style.border = "2px solid red";
                 event.preventDefault();
             } else {
                 username.style.border = ""; 
             }
-
+            
             if(passw.value == "" || passw.value.length < 8 || passw.value.length > 10){
                 passw.style.border = "2px solid red";
                 event.preventDefault();
@@ -46,7 +47,8 @@
 
             if(email.value == "" || (!email.value.includes("@gmail.com") && !email.value.includes("@itis.pr.it"))){
                 email.style.border = "2px solid red";
-                event.preventDefault();
+                event.preventDefault();  // previene che il form venga convalidato se presenta errori
+                //Prova
             } else {
                 email.style.border = "";
             }
