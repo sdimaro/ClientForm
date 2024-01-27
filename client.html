@@ -30,6 +30,7 @@
             let email = document.forms.registrazione.email;
             let birthday = document.forms.registrazione.birthday;
 
+            console.log('prova generazione conflitto 1');
             if(username.value == "" || username.value.length < 3 || username.value.length > 15){
                 username.style.border = "2px solid red";
                 event.preventDefault();
@@ -46,7 +47,8 @@
 
             if(email.value == "" || (!email.value.includes("@gmail.com") && !email.value.includes("@itis.pr.it"))){
                 email.style.border = "2px solid red";
-                event.preventDefault();
+                event.preventDefault(); // Prova
+                console.log('Prova conflitto 2');
             } else {
                 email.style.border = "";
             }
