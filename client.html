@@ -30,14 +30,14 @@
             let email = document.forms.registrazione.email;
             let birthday = document.forms.registrazione.birthday;
 
-            console.log('prova generazione conflitto 1');
+            // validazione
             if(username.value == "" || username.value.length < 3 || username.value.length > 15){
                 username.style.border = "2px solid red";
                 event.preventDefault();
             } else {
                 username.style.border = ""; 
             }
-
+            
             if(passw.value == "" || passw.value.length < 8 || passw.value.length > 10){
                 passw.style.border = "2px solid red";
                 event.preventDefault();
